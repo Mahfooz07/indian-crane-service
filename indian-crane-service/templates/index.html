@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Crane Service — Tumakuru | Crane Rental &amp; Container Handling</title>
+<meta name="description" content="Indian Crane Service, Tumakuru — mobile crane, hydra and container-handling rental with 24/7 dispatch across Karnataka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Indian Crane Service seal" class="brand-seal">
+      <span class="brand-text">
+        <strong>INDIAN CRANE SERVICE</strong>
+        <em>Tumakuru</em>
+      </span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#fleet">Fleet</a>
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#trust">Why us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:+919000000000" class="btn btn-call">
+      <svg viewBox="0 0 24 24" class="icon"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+      Call Dispatch
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-wrap">
+        {% for category, message in messages %}
+          <div class="flash flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Licensed &amp; insured heavy-lift operator — Tumakuru, Karnataka</p>
+        <h1>Every load has a<br><span>right way up.</span></h1>
+        <p class="hero-lede">Indian Crane Service supplies hydras and Farana to sites across Tumakuru and the surrounding districts — rigged, certified and on site within hours.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Request a quote</a>
+          <a href="tel:+919000000000" class="btn btn-ghost">+91 9035437637</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>10</dt><dd>years on Karnataka sites</dd></div>
+          <div><dt>25T</dt><dd>maximum single lift</dd></div>
+          <div><dt>24/7</dt><dd>emergency dispatch</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-rig" aria-hidden="true">
+        <svg viewBox="0 0 480 380" class="rig-svg">
+          <line x1="16" y1="345" x2="464" y2="345" class="rig-ground"/>
+
+          <!-- ===== mobile pick-n-carry crane (Farana F15 style) ===== -->
+          <g class="crane-unit">
+
+            <!-- chassis deck -->
+            <rect x="72" y="252" width="352" height="34" rx="4" class="chassis-body"/>
+
+            <!-- front cab -->
+            <g class="chassis-cab">
+              <path d="M60 252 h60 v-56 h-30 l-30 26 z" class="cab-shell"/>
+              <path d="M58 226 l24 -22 h20 v22 z" class="cab-glass"/>
+              <line x1="60" y1="252" x2="120" y2="252" class="cab-sill"/>
+            </g>
+
+            <!-- rear engine housing + counterweight -->
+            <g class="chassis-rear">
+              <rect x="352" y="214" width="66" height="42" rx="3" class="rear-hood"/>
+              <rect x="360" y="196" width="50" height="20" rx="2" class="rear-weight"/>
+              <line x1="366" y1="196" x2="380" y2="216" class="rear-stripe"/>
+              <line x1="384" y1="196" x2="398" y2="216" class="rear-stripe"/>
+            </g>
+
+            <!-- axles / wheels : tight front pair + tight rear pair, wide clear span between -->
+            <g class="wheels">
+              <circle cx="100" cy="316" r="27" class="tyre"/><circle cx="100" cy="316" r="10" class="hub"/>
+              <circle cx="150" cy="316" r="27" class="tyre"/><circle cx="150" cy="316" r="10" class="hub"/>
+              <circle cx="346" cy="316" r="27" class="tyre"/><circle cx="346" cy="316" r="10" class="hub"/>
+              <circle cx="396" cy="316" r="27" class="tyre"/><circle cx="396" cy="316" r="10" class="hub"/>
+            </g>
+
+            <!-- telescopic boom, pivoted just behind the cab, raised to carrying angle -->
+            <g class="boom-assembly">
+              <path d="M226 258 L406 92" class="boom-main"/>
+              <path d="M248 240 L268 224" class="boom-brace"/>
+              <path d="M288 210 L308 194" class="boom-brace"/>
+              <path d="M330 178 L350 162" class="boom-brace"/>
+              <circle cx="228" cy="256" r="7" class="boom-pivot"/>
+              <circle cx="406" cy="92" r="5" class="boom-sheave"/>
+            </g>
+
+            <!-- hoist cable, hook block, sling and carried load -->
+            <g class="hoist-entrance">
+              <line x1="406" y1="92" x2="406" y2="182" class="hoist-cable"/>
+
+              <g class="hoist-hookblock">
+                <rect x="391" y="182" width="30" height="16" rx="2" class="hook-block-body"/>
+                <path d="M400 198 v10 c0 12 8 20 6 8 s-2 -4 -2 4 c0 12 8 20 6 8" class="hook-curl"/>
+                <path d="M401 198 v9 c0 13 7 21 6 9" class="hook-curl-2"/>
+              </g>
+
+              <g class="hoist-load">
+                <line x1="400" y1="208" x2="368" y2="228" class="sling"/>
+                <line x1="412" y1="208" x2="368" y2="228" class="sling"/>
+                <line x1="400" y1="208" x2="452" y2="228" class="sling"/>
+                <line x1="412" y1="208" x2="452" y2="228" class="sling"/>
+                <rect x="362" y="228" width="96" height="56" rx="3" class="crate-body"/>
+                <line x1="378" y1="228" x2="378" y2="284" class="crate-rib"/>
+                <line x1="394" y1="228" x2="394" y2="284" class="crate-rib"/>
+                <line x1="410" y1="228" x2="410" y2="284" class="crate-rib"/>
+                <line x1="426" y1="228" x2="426" y2="284" class="crate-rib"/>
+                <line x1="442" y1="228" x2="442" y2="284" class="crate-rib"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">What we run</p>
+      <h2>Four rigs, one dispatch number.</h2>
+      <div class="plate-grid">
+
+        <article class="plate">
+          <span class="plate-bolt tl"></span><span class="plate-bolt tr"></span>
+          <span class="plate-bolt bl"></span><span class="plate-bolt br"></span>
+          <svg viewBox="0 0 48 48" class="plate-icon"><path d="M6 40h36M10 40V16l14-8 14 8v24M17 40V24h14v16"/></svg>
+          <h3>Farana Crane</h3>
+          <p>10T to 15T telescopic boom cranes for steel erection, HVAC placement and precast lifts.</p>
+        </article>
+
+        <article class="plate">
+          <span class="plate-bolt tl"></span><span class="plate-bolt tr"></span>
+          <span class="plate-bolt bl"></span><span class="plate-bolt br"></span>
+          <svg viewBox="0 0 48 48" class="plate-icon"><path d="M6 34h36M12 34V20h8v14M28 34V12h8v22M20 20V8h4v12"/></svg>
+          <h3>Hydra &amp; Pick-n-Carry</h3>
+          <p>Nimble upto 14T hydra cranes for tight factory floors, godowns and narrow site lanes.</p>
+        </article>
+
+        <article class="plate">
+          <span class="plate-bolt tl"></span><span class="plate-bolt tr"></span>
+          <span class="plate-bolt bl"></span><span class="plate-bolt br"></span>
+          <svg viewBox="0 0 48 48" class="plate-icon"><rect x="8" y="16" width="32" height="18" rx="1"/><line x1="16" y1="16" x2="16" y2="34"/><line x1="24" y1="16" x2="24" y2="34"/><line x1="32" y1="16" x2="32" y2="34"/></svg>
+          <h3>Container Handling</h3>
+          <p>Spreader-fitted lifts for 20ft and 40ft ISO containers at yards, ports and warehouses.</p>
+        </article>
+
+        <article class="plate">
+          <span class="plate-bolt tl"></span><span class="plate-bolt tr"></span>
+          <span class="plate-bolt bl"></span><span class="plate-bolt br"></span>
+          <svg viewBox="0 0 48 48" class="plate-icon"><circle cx="24" cy="16" r="6"/><path d="M14 40c0-8 20-8 20 0"/><line x1="24" y1="22" x2="24" y2="30"/></svg>
+          <h3>Operator &amp; Rigger Crew</h3>
+          <p>Certified operators and banksmen supplied with every rig — no dry-hire risk.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FLEET SPEC SHEET ===== -->
+  <section class="fleet" id="fleet">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">Fleet spec sheet</p>
+      <h2>Know the rig before it rolls in.</h2>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead>
+            <tr><th>Model</th><th>Capacity</th><th>Max boom</th><th>Best for</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>12T Hydra</td><td>12.0 T</td><td>42 Ft</td><td>Godown &amp; workshop lifts</td></tr>
+            <tr><td>14T Hydra </td><td>14.0 T</td><td>53 Ft</td><td>Precast &amp; structural steel</td></tr>
+            <tr><td>F15</td><td>15.0 T</td><td>62 Ft</td><td>Shifting heavy machinery &amp; Installing factory equipment</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="spec-note">Full load charts and RCI certificates shared before every job — ask dispatch.</p>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process" id="process">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">How a booking runs</p>
+      <h2>From call to lift, four steps.</h2>
+      <ol class="process-steps">
+        <li><span class="step-no">01</span><h3>Call or enquire</h3><p>Tell us the load weight, dimensions and site access.</p></li>
+        <li><span class="step-no">02</span><h3>Site check</h3><p>We confirm ground bearing, swing radius and permits needed.</p></li>
+        <li><span class="step-no">03</span><h3>Rig dispatched</h3><p>Crane, operator and rigger arrive at the agreed slot.</p></li>
+        <li><span class="step-no">04</span><h3>Lift &amp; sign-off</h3><p>Load placed, checklist signed, site left clear.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== TRUST / SEALS ===== -->
+  <section class="trust" id="trust">
+    <div class="wrap">
+      <p class="eyebrow">Why contractors call us back</p>
+      <h2>Built the way the seal reads: certified, on record, on time.</h2>
+      <div class="seal-grid">
+        <div class="seal">
+          <svg viewBox="0 0 100 100" class="seal-ring"><circle cx="50" cy="50" r="48"/><circle cx="50" cy="50" r="42"/></svg>
+          <span class="seal-figure">10+</span>
+          <span class="seal-label">Years operation</span>
+        </div>
+        <div class="seal">
+          <svg viewBox="0 0 100 100" class="seal-ring"><circle cx="50" cy="50" r="48"/><circle cx="50" cy="50" r="42"/></svg>
+          <span class="seal-figure">Zero</span>
+          <span class="seal-label">Lost-time incidents</span>
+        </div>
+        <div class="seal">
+          <svg viewBox="0 0 100 100" class="seal-ring"><circle cx="50" cy="50" r="48"/><circle cx="50" cy="50" r="42"/></svg>
+          <span class="seal-figure">RCI</span>
+          <span class="seal-label">Rated capacity indicators</span>
+        </div>
+        <div class="seal">
+          <svg viewBox="0 0 100 100" class="seal-ring"><circle cx="50" cy="50" r="48"/><circle cx="50" cy="50" r="42"/></svg>
+          <span class="seal-figure">30 min</span>
+          <span class="seal-label">Average dispatch window in-city</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">From site engineers</p>
+      <blockquote class="quote">
+        <p>“Booked a F15 for a precast pour with two days' notice — rig and rigger were on site, load charts printed, before we'd finished the safety briefing.”</p>
+        <cite>— Site Engineer, Industrial Layout, Tumakuru</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner">
+      <div class="contact-info">
+        <p class="eyebrow">Get a rig on site</p>
+        <h2>Tell us the lift.<br>We'll quote it same day.</h2>
+        <ul class="contact-list">
+          <li><strong>Phone / WhatsApp</strong><a href="tel:+919000000000">+91 9035437637</a><a href="tel:+919000000000">+91 7019056766</a></li>
+          <li><strong>Email</strong><a href="mailto:dispatch@indiancraneservice.in">indiancraneservice17@gmail.com</a></li>
+          <li><strong>Yard</strong>Vasanthanarasapura Industrial Park, Tumakuru, Karnataka 572128</li>
+        </ul>
+      </div>
+      <form class="contact-form" action="{{ url_for('contact') }}" method="POST">
+        <label>Name
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>Phone
+          <input type="tel" name="phone" placeholder="10-digit mobile" required>
+        </label>
+        <label>Site location
+          <input type="text" name="location" placeholder="Area / landmark in Tumakuru">
+        </label>
+        <label>Load details
+          <textarea name="message" rows="4" placeholder="Weight, dimensions, date needed"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">Send enquiry</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Indian Crane Service seal" class="footer-seal">
+    <p>&copy; <span id="year"></span> Indian Crane Service, Tumakuru. All rigs insured and third-party liability covered.</p>
+    <div class="footer-links">
+      <a href="#fleet">Fleet</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
