@@ -150,7 +150,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero-stats dd { margin: 2px 0 0; font-size: 0.78rem; color: var(--steel-700); }
 
 .hero-rig { display: flex; justify-content: center; }
-.rig-svg { width: 100%; max-width: 460px; }
+.rig-svg { width: 100%; max-width: 480px; }
 
 .rig-ground { stroke: var(--steel-500); stroke-width: 2; stroke-dasharray: 2 6; }
 
@@ -158,14 +158,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .chassis-body { fill: var(--steel-300); stroke: var(--navy-900); stroke-width: 3; }
 .cab-shell { fill: var(--steel-300); stroke: var(--navy-900); stroke-width: 3; stroke-linejoin: round; }
 .cab-glass { fill: var(--navy-800); opacity: 0.85; }
+.driver-head { fill: var(--cream); opacity: 0.9; }
 .cab-sill { stroke: var(--navy-900); stroke-width: 3; }
 .rear-hood { fill: var(--steel-300); stroke: var(--navy-900); stroke-width: 3; }
 .rear-weight { fill: var(--navy-800); stroke: var(--navy-900); stroke-width: 2; }
-.rear-stripe { stroke: var(--cream); stroke-width: 3; }
+.rear-stripe { stroke: var(--cream); stroke-width: 2.5; }
 .tyre { fill: var(--navy-950); }
 .hub { fill: var(--steel-300); }
 
-.boom-main { stroke: var(--navy-900); stroke-width: 7; stroke-linecap: round; fill: none; }
+.boom-main { stroke: var(--navy-900); stroke-width: 9; stroke-linecap: round; fill: none; }
 .boom-brace { stroke: var(--navy-900); stroke-width: 3; stroke-linecap: round; }
 .boom-pivot { fill: var(--navy-950); stroke: var(--steel-300); stroke-width: 2; }
 .boom-sheave { fill: var(--steel-300); stroke: var(--navy-900); stroke-width: 2; }
@@ -173,7 +174,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* hoist: cable lowers first, then hook block appears, then load is picked up */
 .hoist-cable {
   stroke: var(--steel-700); stroke-width: 2.5;
-  transform-origin: 406px 92px;
+  transform-origin: 430px 40px;
   animation: lowerCable 0.9s ease-out 0.2s both;
 }
 .hoist-hookblock {
@@ -187,7 +188,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   opacity: 0;
   transform: translateY(46px);
   animation: pickUpLoad 0.9s cubic-bezier(.2,.8,.3,1) 1.35s forwards, sway 4s ease-in-out 2.3s infinite;
-  transform-origin: 406px 208px;
+  transform-origin: 430px 156px;
 }
 .sling { stroke: var(--steel-700); stroke-width: 2; }
 .crate-body { fill: var(--steel-300); stroke: var(--navy-900); stroke-width: 3; }
