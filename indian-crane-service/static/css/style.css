@@ -26,7 +26,11 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
@@ -103,6 +107,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: rgba(244, 239, 225, 0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--steel-300);
+  overflow: visible;
 }
 .header-inner {
   display: flex; align-items: center; gap: 20px; flex-wrap: nowrap;
